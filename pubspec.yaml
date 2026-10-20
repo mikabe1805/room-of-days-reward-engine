@@ -1,0 +1,13 @@
+name: room_of_days_rewards
+description: >-
+  The reward engine from Room of Days, an iPhone habit app: XP, streaks,
+  streak freezes and levels, as plain Dart with its tests.
+version: 1.0.4+49
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.0

@@ -6,6 +6,23 @@ This repo is that engine taken out of the app so it can be read and tested on it
 
 The [case study](https://mikabe1805.github.io/projects/room-of-days.html) has a Quest board that runs these rules in the browser.
 
+## Why six stats
+
+Each Quest trains one of six life stats. They are there to get you doing different kinds of things and improving yourself from different angles, instead of always doing what's easiest.
+
+| Stat | Quests like | What it changes in this engine |
+| --- | --- | --- |
+| Body | workouts, walks, sports, stretching | raises the chance of a critical hit |
+| Care | meals, sleep, water, meds, plants, pets | at 40, freezes refill every 2 active days instead of 3 |
+| Mind | reading, learning, reflecting | raises XP by up to 15% |
+| Craft | deep work, projects, practice, skills | raises the chance of a loot drop in the app (loot is left out here) |
+| People | reaching out, friends, family, plans | none in 1.0.4 |
+| Home | chores, tidying, errands, repairs | makes the idle bonus up to 25% stronger |
+
+The payouts lean the same way. The Quest you keep putting off pays ×1.35 and adds 3 to its stat, and a Quest you haven't done in a while pays up to 50% more. The same Quest done again on the same day pays less each time, and past 40 points of one stat in a day, that stat grows at half speed.
+
+I always think about things from the user's side, so I also wanted a reason to raise all six stats instead of focusing on one. That became the weekly battle, a weekend fight where every stat is an ability, from Body's Power Slam to People calling in a friend. The Quests you finish for a stat during the week make its ability stronger, so working on your goals all week earns you an easier fight. The monster changes every week, one weak to Body and the next weak to Mind. The battle is in the internal TestFlight build of version 1.0.5 (build 56). It is not on the App Store yet, and its code is not in this repo.
+
 ## Run it
 
 Needs the Dart SDK, 3.8 or newer (checked with 3.12.2).

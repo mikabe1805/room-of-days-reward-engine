@@ -19,7 +19,7 @@ Each Quest trains one of six life stats. They are there to get you doing differe
 | People | reaching out, friends, family, plans | none in 1.0.4 |
 | Home | chores, tidying, errands, repairs | makes the idle bonus up to 25% stronger |
 
-The payouts lean the same way. The Quest you keep putting off pays ×1.35 and adds 3 to its stat, and a Quest you haven't done in a while pays up to 50% more. The same Quest done again on the same day pays less each time, and past 40 points of one stat in a day, that stat grows at half speed.
+The payouts lean the same way. The Quest you keep putting off pays ×1.35 and adds 3 to its stat, and a Quest you haven't done in a while pays up to 50% more. Past 40 points of one stat in a day, that stat grows at half speed.
 
 I always think about things from the user's side, so I also wanted a reason to raise all six stats instead of focusing on one. That became the weekly battle, a weekend fight where every stat is an ability, from Body's Power Slam to People calling in a friend. The Quests you finish for a stat during the week make its ability stronger, so working on your goals all week earns you an easier fight. The monster changes every week, one weak to Body and the next weak to Mind. The battle is in the internal TestFlight build of version 1.0.5 (build 56). It is not on the App Store yet, and its code is not in this repo.
 
@@ -88,7 +88,6 @@ flowchart TD
 - **Roll and commit are separate.** `roll` works out the receipt without changing any totals, so the app can show it and fill the XP bar before `commit` applies the same numbers. The freeze numbers travel inside the receipt, so a completion that itself lifts Care to 40 follows one rule in both steps. Test: `the completion that reaches CARE 40 uses the shorter cadence`.
 - **Days are calendar days.** Gaps are counted in calendar dates, so a daylight-saving weekend with its 23-hour day can't invent or hide a missed day. Saved day keys are read strictly: 2026-02-31 is refused instead of becoming March 3. Tests: `test/calendar_test.dart`.
 - **Milestone chests are paid once.** The 7, 30 and 100 day chests are paid inside the once-a-day streak step. An earlier version paid the 30-day chest on every Quest that day, so six Quests paid 1,200 Glimmers instead of 200. Test: `a milestone chest is paid once, however many Quests that day`.
-- **Grinding pays less, never nothing.** Repeats and long days are damped by multipliers that never reach zero. Test: `the same Quest again today pays 100%, 50%, 25%, then 10%`.
 
 ## What's here
 
